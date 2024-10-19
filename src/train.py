@@ -22,7 +22,7 @@ def train_model():
     optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
 
     # Training loop
-    for epoch in range(1000):  # Number of epochs
+    for epoch in range(10):  # Number of epochs
         model.train()
         for gray_images, color_images in train_loader:
             gray_images, color_images = gray_images.to(device), color_images.to(device)
@@ -32,8 +32,7 @@ def train_model():
             loss.backward()
             optimizer.step()
 
-        if epoch % 100 == 0:
-            print(f'Epoch {epoch+1}, Loss: {loss.item()}')
+        print(f'Epoch {epoch+1}, Loss: {loss.item()}')
 
     # Save the final trained model
     torch.save(model.state_dict(), 'models/colorization_model.pth')
