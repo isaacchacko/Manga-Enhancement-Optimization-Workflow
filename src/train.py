@@ -10,11 +10,11 @@ def train_model():
 
     # Load training data
     train_dataset = MangaColorizationDataset('dataset/train/grayscale', 'dataset/train/color', transform=transform)
-    train_loader = DataLoader(train_dataset, batch_size=4, shuffle=True)
+    train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True)
 
     # Load testing data
     test_dataset = MangaColorizationDataset('dataset/test/grayscale', 'dataset/test/color', transform=transform)
-    test_loader = DataLoader(test_dataset, batch_size=4, shuffle=False)
+    test_loader = DataLoader(test_dataset, batch_size=32, shuffle=False)
 
     # Initialize model, loss function, and optimizer
     model = ColorizationNet().to(device)
