@@ -19,7 +19,7 @@ class ColorizationNet(nn.Module):
         x = self.decoder(x)
         return x
 
-# Example of using adaptive pooling if needed
+# Using adaptive pooling if needed
 class FlexibleColorizationNet(nn.Module):
     def __init__(self):
         super(FlexibleColorizationNet, self).__init__()
