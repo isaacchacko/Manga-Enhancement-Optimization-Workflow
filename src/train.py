@@ -5,7 +5,7 @@ from dataset import MangaColorizationDataset, transform
 from model import ColorizationNet
 
 def train_model():
-    train_dataset = MangaColorizationDataset('data/train/grayscale', 'data/train/color', transform=transform)
+    train_dataset = MangaColorizationDataset('dataset/train/grayscale', 'dataset/train/color', transform=transform)
     train_loader = DataLoader(train_dataset, batch_size=4, shuffle=True)
 
     model = ColorizationNet()
