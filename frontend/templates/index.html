@@ -6,6 +6,8 @@
     <title>Manga Reader - Home</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
+
 <body>
     <header>
         <img src="https://media1.tenor.com/m/Erz50ZMbtvEAAAAC/turbo-granny-dandadan-turbo-granny.gif" alt="logo"/>
@@ -20,17 +22,16 @@
         <p>Select your favorite manga and start reading!</p>
 
         <form action="/read" method="GET">
-            <label for="manga">Choose a Manga:</label>
-            <select name="manga" id="manga">
-                <option value="naruto">Naruto</option>
-                <option value="bleach">Bleach</option>
-                <option value="demonslayer">Demon Slayer</option>
-                <option value="one_piece">One Piece</option>
-                <option value="Jujitsu Kaisen">Jujitsu Kaisen</option>
-                <option value="Vinland Saga">Vinland Saga</option>
+            <form method="POST" action="/">
+            <label for="manga">Manga:</label>
+            <select id="manga" name="manga" required>
+                <option value="" disabled selected>Select a manga</option>
+                {% for manga, volumes in manga_list.items() %}
+                    <option value="{{ manga }}">{{ manga }}</option>
+                {% endfor %}
             </select>
+        <label for="volume">Choose Volume:</label>
 
-            <label for="volume">Choose Volume:</label>
             <select name="volume" id="volume">
             <option value="Volume 001">Volume 001</option>
             <option value="Volume 002">Volume 002</option>
@@ -151,12 +152,50 @@
             </select>
             <button type="submit">Read Now</button>
         </form>
-
-        <select id="chapterSelect">
-            {% for chapter in chapters %}
-                <option value="{{ chapter }}">Chapter {{ chapter }}</option>
-            {% endfor %}
-        </select>
+        
+        <script>
+            // Update volume options when a manga is selected
+            $('#manga').change(function() {
+                const manga = $(this).val();
+                $.ajax({
+                    url: '/get_volumes',
+                    method: 'POST',
+                    data: { manga: manga },
+                    success: function(data) {
+                        $('#volume').empty().append('<option value="" disabled selected>Select a volume</option>');
+                        data.volumes.forEach(function(volume) {
+                            $('#volume').append(`<option value="${volume}">${volume}</option>`);
+                        });
+                    }
+                });
+            });
+    
+            // Update chapter options when a volume is selected
+            $('#volume').change(function() {
+                const manga = $('#manga').val();
+                const volume = $(this).val();
+                $.ajax({
+                    url: '/get_chapters',
+                    method: 'POST',
+                    data: { manga: manga, volume: volume },
+                    success: function(data) {
+                        $('#chapter').empty().append('<option value="" disabled selected>Select a chapter</option>');
+                        data.chapters.forEach(function(chapter) {
+                            $('#chapter').append(`<option value="${chapter}">${chapter}</option>`);
+                        });
+                    }
+                });
+            });
+    
+            // Handle form submission
+            $('#mangaForm').submit(function(event) {
+                event.preventDefault();
+                const manga = $('#manga').val();
+                const volume = $('#volume').val();
+                const chapter = $('#chapter').val();
+                window.location.href = `/view_chapter?manga=${manga}&volume=${volume}&chapter=${chapter}`;
+            });
+        </script>        
     </main>
 
     <footer>

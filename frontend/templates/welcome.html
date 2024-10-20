@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEOW Animation</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #282c34;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #61dafb;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #21a1f1;
+        }
+    </style>
+</head>
+<div class="container">
+    <div class="full-text">
+        <span class="first-letter">M</span><span class="rest-letters">anga</span>
+        <span class="first-letter">E</span><span class="rest-letters">nhancement</span>
+        <span class="first-letter">O</span><span class="rest-letters">ptimization</span>
+        <span class="first-letter">W</span><span class="rest-letters">orkflow</span>
+    </div>
+</div>
+<body>
+    <div>
+        <button class="button" onclick="location.href='{{ url_for('home') }}'">Enter</button>
+    </div>
+
+</body>
+
+
+</html>
