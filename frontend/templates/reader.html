@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading - {{ manga_name }} Chapter {{ chapter }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="logo">📖 Manga Reader</div>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/read/{{ manga_name }}/{{ chapter | int - 1 }}">Previous</a>
+            <a href="/read/{{ manga_name }}/{{ chapter | int + 1 }}">Next</a>
+        </nav>
+    </header>
+
+    <main class="pdf-container">
+        <h1>{{ manga_name }} - Chapter {{ chapter }}</h1>
+        <object class="pdf-viewer"
+                data="/static/manga/{{ manga_name }}/chapter_{{ chapter }}.pdf" 
+                type="application/pdf">
+            <p>It appears your browser doesn’t support PDFs. <a href="/static/manga/{{ manga_name }}/chapter_{{ chapter }}.pdf">Download PDF</a></p>
+        </object>
+    </main>
+
+    <div id="pdf-viewer"></div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"></script>
+            <script>
+            pdfjsLib.getDocument('{{ pdf_url }}').promise.then(function(pdf) {
+        // PDF viewer initialization
+    });
+        </script>
+
+    <footer>
+        <p>&copy; 2024 MEOW. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

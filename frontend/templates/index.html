@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manga Reader - Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <img src="https://media1.tenor.com/m/Erz50ZMbtvEAAAAC/turbo-granny-dandadan-turbo-granny.gif" alt="logo"/>
+        <nav>
+            <a href="{{ url_for('home') }}" class="btn">Home</a>
+            <a href="{{ url_for('about') }}" class="btn">About</a>
+        </nav>
+    </header>
+
+    <main class="content">
+        <h1>Welcome to MEOW!</h1>
+        <p>Select your favorite manga and start reading!</p>
+
+        <form action="/read" method="GET">
+            <label for="manga">Choose a Manga:</label>
+            <select name="manga" id="manga">
+                <option value="naruto">Naruto</option>
+                <option value="bleach">Bleach</option>
+                <option value="demonslayer">Demon Slayer</option>
+                <option value="one_piece">One Piece</option>
+                <option value="Jujitsu Kaisen">Jujitsu Kaisen</option>
+                <option value="Vinland Saga">Vinland Saga</option>
+            </select>
+
+            <label for="volume">Choose Volume:</label>
+            <select name="volume" id="volume">
+            <option value="Volume 001">Volume 001</option>
+            <option value="Volume 002">Volume 002</option>
+            <option value="Volume 003">Volume 003</option>
+            <option value="Volume 004">Volume 004</option>
+            <option value="Volume 005">Volume 005</option>
+            <option value="Volume 006">Volume 006</option>
+            <option value="Volume 007">Volume 007</option>
+            <option value="Volume 008">Volume 008</option>
+            <option value="Volume 009">Volume 009</option>
+            <option value="Volume 010">Volume 010</option>
+            <option value="Volume 011">Volume 011</option>
+            <option value="Volume 012">Volume 012</option>
+            <option value="Volume 013">Volume 013</option>
+            <option value="Volume 014">Volume 014</option>
+            <option value="Volume 015">Volume 015</option>
+            <option value="Volume 016">Volume 016</option>
+            <option value="Volume 017">Volume 017</option>
+            <option value="Volume 018">Volume 018</option>
+            <option value="Volume 019">Volume 019</option>
+            <option value="Volume 020">Volume 020</option>
+            <option value="Volume 021">Volume 021</option>
+            <option value="Volume 022">Volume 022</option>
+            <option value="Volume 023">Volume 023</option>
+            <option value="Volume 024">Volume 024</option>
+            <option value="Volume 025">Volume 025</option>
+            <option value="Volume 026">Volume 026</option>
+            <option value="Volume 027">Volume 027</option>
+            <option value="Volume 028">Volume 028</option>
+            <option value="Volume 029">Volume 029</option>
+            <option value="Volume 030">Volume 030</option>
+            <option value="Volume 031">Volume 031</option>
+            <option value="Volume 032">Volume 032</option>
+            <option value="Volume 033">Volume 033</option>
+            <option value="Volume 034">Volume 034</option>
+            <option value="Volume 035">Volume 035</option>
+            <option value="Volume 036">Volume 036</option>
+            <option value="Volume 037">Volume 037</option>
+            <option value="Volume 038">Volume 038</option>
+            <option value="Volume 039">Volume 039</option>
+            <option value="Volume 040">Volume 040</option>
+            <option value="Volume 041">Volume 041</option>
+            <option value="Volume 042">Volume 042</option>
+            <option value="Volume 043">Volume 043</option>
+            <option value="Volume 044">Volume 044</option>
+            <option value="Volume 045">Volume 045</option>
+            <option value="Volume 046">Volume 046</option>
+            <option value="Volume 047">Volume 047</option>
+            <option value="Volume 048">Volume 048</option>
+            <option value="Volume 049">Volume 049</option>
+            <option value="Volume 050">Volume 050</option>
+            <option value="Volume 051">Volume 051</option>
+            <option value="Volume 052">Volume 052</option>
+            <option value="Volume 053">Volume 053</option>
+            <option value="Volume 054">Volume 054</option>
+            <option value="Volume 055">Volume 055</option>
+            <option value="Volume 056">Volume 056</option>
+            <option value="Volume 057">Volume 057</option>
+            <option value="Volume 058">Volume 058</option>
+            <option value="Volume 059">Volume 059</option>
+            <option value="Volume 060">Volume 060</option>
+            <option value="Volume 061">Volume 061</option>
+            <option value="Volume 062">Volume 062</option>
+            <option value="Volume 063">Volume 063</option>
+            <option value="Volume 064">Volume 064</option>
+            <option value="Volume 065">Volume 065</option>
+            <option value="Volume 066">Volume 066</option>
+            <option value="Volume 067">Volume 067</option>
+            <option value="Volume 068">Volume 068</option>
+            <option value="Volume 069">Volume 069</option>
+            <option value="Volume 070">Volume 070</option>
+            <option value="Volume 071">Volume 071</option>
+            <option value="Volume 072">Volume 072</option>
+            <option value="Volume 073">Volume 073</option>
+            <option value="Volume 074">Volume 074</option>
+            <option value="Volume 075">Volume 075</option>
+            <option value="Volume 076">Volume 076</option>
+            <option value="Volume 077">Volume 077</option>
+            <option value="Volume 078">Volume 078</option>
+            <option value="Volume 079">Volume 079</option>
+            <option value="Volume 080">Volume 080</option>
+            <option value="Volume 081">Volume 081</option>
+            <option value="Volume 082">Volume 082</option>
+            <option value="Volume 083">Volume 083</option>
+            <option value="Volume 084">Volume 084</option>
+            <option value="Volume 085">Volume 085</option>
+            <option value="Volume 086">Volume 086</option>
+            <option value="Volume 087">Volume 087</option>
+            <option value="Volume 088">Volume 088</option>
+            <option value="Volume 089">Volume 089</option>
+            <option value="Volume 090">Volume 090</option>
+            <option value="Volume 091">Volume 091</option>
+            <option value="Volume 092">Volume 092</option>
+            <option value="Volume 093">Volume 093</option>
+            <option value="Volume 094">Volume 094</option>
+            <option value="Volume 095">Volume 095</option>
+            <option value="Volume 096">Volume 096</option>
+            <option value="Volume 097">Volume 097</option>
+            <option value="Volume 098">Volume 098</option>
+            <option value="Volume 099">Volume 099</option>
+            <option value="Volume 100">Volume 100</option>
+            <option value="Volume 101">Volume 101</option>
+            <option value="Volume 102">Volume 102</option>
+            <option value="Volume 103">Volume 103</option>
+            <option value="Volume 104">Volume 104</option>
+            <option value="Volume 105">Volume 105</option>
+            <option value="Volume 106">Volume 106</option>
+            <option value="Volume 107">Volume 107</option>
+            <option value="Volume 108">Volume 108</option>
+            </select>
+
+            <label for="chapter">Select Chapter:</label>
+            <!-- <select name="name" id="chapter" name="chapter" min="1" placeholder="Chapter 1" required> -->
+            <select class="chapter-select" name="chapter" id="chapter">
+                <option value="Chapter 1">Chapter 1</option>
+                <option value="Chapter 2">Chapter 2</option>
+                <option value="Chapter 3">Chapter 3</option>
+            </select>
+            <button type="submit">Read Now</button>
+        </form>
+
+        <select id="chapterSelect">
+            {% for chapter in chapters %}
+                <option value="{{ chapter }}">Chapter {{ chapter }}</option>
+            {% endfor %}
+        </select>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Manga Reader. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
