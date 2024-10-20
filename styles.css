@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+}
+
+.full-text {
+    font-size: 2rem;
+}
+
+.first-letter, .rest-letters {
+    display: inline-block;
+    opacity: 1;
+}
+
+.rest-letters {
+    opacity: 1;
+    animation: fadeOut 5s forwards; /* Extended duration */
+    animation-delay: 3s; /* 3-second delay before starting fade-out */
+}
+
+.first-letter {
+    font-weight: bold;
+    opacity: 1;
+}
+
+@keyframes fadeOut {
+    0%, 20% {
+        opacity: 1; /* Hold opacity at 1 (visible) until 80% of the time */
+    }
+    100% {
+        opacity: 0; /* Fade out at the end */
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translate(0, 0); /* Start at initial position */
+    }
+    100% {
+        transform: translate(0, -100px); /* Move up by 100px */
+    }
+}
+
+.first-letter {
+    animation: slideUp 4s forwards;
+    animation-delay: 4s; /* Starts after fading */
+    position: relative;
+}
+
+
