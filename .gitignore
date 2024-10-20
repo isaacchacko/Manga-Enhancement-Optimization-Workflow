@@ -1,5 +1,0 @@
-venv/
-.gitignore
-dataset/
-output/
-src/__pycache__
