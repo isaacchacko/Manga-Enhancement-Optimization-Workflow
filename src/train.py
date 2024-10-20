@@ -34,10 +34,13 @@ def train_model():
 
         print(f'Epoch {epoch+1}, Loss: {loss.item()}')
 
-    # Save the final trained model
+    # Save the final trained model. do later
+    """
     torch.save(model.state_dict(), 'models/colorization_model.pth')
+    """
 
     # Evaluation loop
+    """
     model.eval()
     total_loss = 0
     with torch.no_grad():
@@ -49,6 +52,7 @@ def train_model():
 
     avg_loss = total_loss / len(test_loader)
     print(f'Average Test Loss: {avg_loss}')
+    """
     
 if __name__ == "__main__":
     train_model()
