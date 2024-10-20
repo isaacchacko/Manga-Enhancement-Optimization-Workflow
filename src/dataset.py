@@ -27,6 +27,6 @@ class MangaColorizationDataset(Dataset):
         return grayscale_image, color_image
 
 transform = transforms.Compose([
-    transforms.Resize(512),  # Resize based on the shorter side
+    transforms.Resize((1200, 760)),  
     transforms.ToTensor(),
 ])

@@ -2,10 +2,10 @@ import os
 import torch
 from PIL import Image
 from torchvision import transforms
-from model import ColorizationNet  # Ensure correct import path
+from model import FlexibleColorizationNet  # Ensure correct import path
 
 # Recreate the model architecture
-model = ColorizationNet()
+model = FlexibleColorizationNet()
 
 # Load the saved state_dict
 model.load_state_dict(torch.load('models/colorization_model.pth'))
@@ -15,7 +15,7 @@ model.eval()
 
 # Define the transformation
 transform = transforms.Compose([
-    transforms.Resize(512),  # Adjust based on your needs
+    transforms.Resize((1200, 760)),  # Adjust based on your needs
     transforms.ToTensor(),
 ])
 
