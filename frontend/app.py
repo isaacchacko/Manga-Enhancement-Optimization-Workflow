@@ -12,7 +12,7 @@ manga_data = {
     "Vinland Saga": {1: ["Chapter 1"], 2: ["Chapter1", "Chapter 2"]}
 }
 
-@app.route('/')
+@app.route('/welcome')
 def welcome():
     return render_template('welcome.html')
 
@@ -48,6 +48,7 @@ def serve_manga(manga_name, chapter):
 @app.route('/')
 def home():
     return render_template('home.html')
+
 
 @app.route('/about')
 def about():
