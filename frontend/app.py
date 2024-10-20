@@ -6,6 +6,10 @@ app = Flask(__name__)
 manga_folder = '/Users/kavyaagar/tidal hack/TIDAL-Hackathon-2024/frontend/manga'
 allowed_extension = {'pdf','png','jpg'}
 
+@app.route('/welcome')
+def welcome():
+    return render_template("welcome.html")
+
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in allowed_extension
 
@@ -22,8 +26,6 @@ def reader(manga_name, chapter):
     if allowed_file(chapter):
         return render_template('reader.html', manga_name=manga_name, chapter=chapter)
     return "Invalid chapter or file not found.", 404
-
-@app.route('/reader')
 
 @app.route('/read/<manga_name>/<chapter>')
 def serve_manga(manga_name, chapter):
