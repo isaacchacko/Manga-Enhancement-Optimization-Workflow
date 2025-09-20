@@ -8,7 +8,7 @@ from model import FlexibleColorizationNet  # Ensure correct import path
 model = FlexibleColorizationNet()
 
 # Load the saved state_dict
-model.load_state_dict(torch.load('models/colorization_model.pth'))
+model.load_state_dict(torch.load('models/colorization_model.pth', map_location=torch.device('cpu')))
 
 # Set the model to evaluation mode
 model.eval()

@@ -1,0 +1,21 @@
+##[pylyzer] failed /home/isaac/Documents/programs/hackathons/tidal-2024/scrape.py 1729382320 1465
+.colorsys = pyimport "<failure>"
+.<failure> = pyimport "<failure>"
+
+
+
+.concurrent = pyimport "<failure>"
+
+
+.requests = pyimport "requests"
+
+.json = pyimport "<failure>"
+
+
+.base_url: {"https://api.mangadex.org"}
+._id: {"a1c7c817-4e59-43b7-9365-09675a149a6f"}
+.colored_id: {"a2c1d849-af05-4bbc-b2a7-866ebb10331f"}
+.get_request: (color: Bool, max_limit: Obj, i: Obj) -> Never
+.get_ids: (color: Bool := Bool) -> Never
+.save_as: (_dict: Obj, filename: Obj) -> Never
+
